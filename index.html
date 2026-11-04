@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Otvori u Outlooku</title></head>
+<body style="font-family:-apple-system,sans-serif;text-align:center;padding:40px">
+<p>Otvaram mejl u Outlook aplikaciji...</p>
+<p><a id="app" href="#">Otvori u Outlook aplikaciji</a></p>
+<p><a id="web" href="#">Otvori u browseru</a></p>
+<script>
+var p=new URLSearchParams(location.search),id=p.get('id')||'',acc=p.get('a')||'zana.djurovic@meridianbet.com';
+var app='ms-outlook://emails/message/open?restID='+encodeURIComponent(id)+'&immutableID='+encodeURIComponent(id)+'&account='+encodeURIComponent(acc);
+var web='https://outlook.office365.com/owa/?ItemID='+encodeURIComponent(id)+'&exvsurl=1&viewmodel=ReadMessageItem';
+document.getElementById('app').href=app;document.getElementById('web').href=web;
+if(id)location.href=app;
+</script></body></html>
